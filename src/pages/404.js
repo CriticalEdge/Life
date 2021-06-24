@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
 
-// styles
+// styres
 const pageStyles = {
   color: '#232129',
   padding: '96px',
@@ -37,7 +37,7 @@ const NotFoundPage = () => {
         </span>{' '}
         we couldn’t find what you were looking for.
         <br />
-        {process.env.NODE_ENV === 'development' ? (
+        {process.env.NODE_ENV === 'development' ? ( // eslint-disable-line
           <>
             <br />
             Try creating a page in <code style={codeStyles}>src/pages/</code>.
