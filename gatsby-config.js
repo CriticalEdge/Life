@@ -24,5 +24,8 @@ module.exports = {
       },
       __key: 'images'
     }
-  ]
+  ],
+  flags: {
+    FAST_DEV: true
+  }
 }
