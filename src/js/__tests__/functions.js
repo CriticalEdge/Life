@@ -1,16 +1,14 @@
-import { generateRowsAndColumns } from '../functions'
+import { generateRowsAndColumns, toggleCell } from '../functions'
+
+const randomDimension = () => {
+  const num = Math.round(Math.random() * (Math.round(Math.random()) ? 10 : 100))
+  return num
+}
+let width
+let height
+let grid
 
 describe('generateRowsAndColumns', () => {
-  const randomDimension = () => {
-    const num = Math.round(
-      Math.random() * (Math.round(Math.random()) ? 10 : 100)
-    )
-    return num
-  }
-  let width
-  let height
-  let grid
-
   beforeEach(() => {
     width = randomDimension()
     height = randomDimension()
@@ -28,5 +26,15 @@ describe('generateRowsAndColumns', () => {
     for (let i = 0; i < grid.length; i++) {
       expect(grid[i]).toHaveLength(height)
     }
+  })
+})
+
+describe('toggleCell', () => {
+  test('Toggles the cell at the coordinates provided', () => {
+    grid = generateRowsAndColumns(30, 30)
+    const beforeToggle = grid[15][20]
+    toggleCell(grid, 15, 20)
+    const afterToggle = grid[15][20]
+    expect(afterToggle).not.toEqual(beforeToggle)
   })
 })

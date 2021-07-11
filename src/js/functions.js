@@ -11,3 +11,7 @@ export const generateRowsAndColumns = (width, height) => {
   }
   return grid
 }
+
+export const toggleCell = (grid, i, j) => {
+  grid[i][j] = grid[i][j] ? 0 : 1
+}
