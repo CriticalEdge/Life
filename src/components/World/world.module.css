@@ -1,0 +1,18 @@
+.tr {
+  height: 1rem;
+  width: 1rem;
+  border: 1px solid black;
+}
+
+.header {
+  color: gray;
+}
+
+.table {
+  width: 100%;
+}
+
+.cell {
+  border: 1px solid black;
+  border-radius: 3px;
+}
