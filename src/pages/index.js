@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { World } from '../components/World'
+import World from '../components/World'
 
 // styles
 
