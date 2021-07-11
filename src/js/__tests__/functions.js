@@ -18,7 +18,8 @@ describe('generateRowsAndColumns', () => {
   })
 
   test('Returns a 2-dimensional array', () => {
-    expect(grid).toBe(grid)
+    const gridWithoutSubarrays = grid.filter((_, i) => !Array.isArray(grid[i]))
+    expect(gridWithoutSubarrays).toHaveLength(0)
   })
   test('The main array has a length equal to the given width', () => {
     expect(grid).toHaveLength(width)
