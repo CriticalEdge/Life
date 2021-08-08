@@ -12,7 +12,14 @@
   width: 100%;
 }
 
-.cell {
+.living_cell {
   border: 1px solid black;
   border-radius: 3px;
+  background-color: blue;
+}
+
+.dead_cell {
+  border: 1px solid black;
+  border-radius: 3px;
+  background-color: red;
 }

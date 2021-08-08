@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { generateRowsAndColumns } from '../../js/functions.js'
 import * as styles from './world.module.css'
 
 export default function World() {
+  const [living, setLiving] = useState(false)
   const world = generateRowsAndColumns(50, 50)
   return (
     <>
@@ -13,7 +14,12 @@ export default function World() {
             <tr key={i} className={styles.tr}>
               {row.map((value, j) => {
                 return (
-                  <td key={j} className={styles.cell}>
+                  <td
+                    key={j}
+                    onClick={setLiving(!living)}
+                    className={
+                      living ? styles.living_cell : styles.dead_cell
+                    }>
                     {value}
                   </td>
                 )
