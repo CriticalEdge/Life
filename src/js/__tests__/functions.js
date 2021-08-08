@@ -1,4 +1,4 @@
-import { generateRowsAndColumns, toggleCell } from '../functions'
+import { generateRowsAndColumns, fillRandomCells } from '../functions'
 
 describe('generateRowsAndColumns', () => {
   const generateRandomDimension = () => {
@@ -31,12 +31,9 @@ describe('generateRowsAndColumns', () => {
   })
 })
 
-describe('toggleCell', () => {
-  test('Toggles the cell at the coordinates provided', () => {
+describe('fillRandomCells', () => {
+  test('Fills various cells throughout the multi-dimensional array', () => {
     let grid = generateRowsAndColumns(30, 30)
-    const beforeToggle = grid[15][20]
-    toggleCell(grid, 15, 20)
-    const afterToggle = grid[15][20]
-    expect(afterToggle).not.toEqual(beforeToggle)
+    let gridWithLivingCells = fillRandomCells(grid)
   })
 })
